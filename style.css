@@ -6,8 +6,10 @@
 }
 
 h1{
-    color: antiquewhite;
-    
+    color: #ffff;
+    font-size: clamp(2rem, 2.5vmin, 3.5rem); 
+    text-align: center;   
+    position: relative;
 }
 
 body {
