@@ -1,6 +1,4 @@
-*,
-*::after,
-*::before {
+*, *::after, *::before {
   box-sizing: border-box;
   font-family: Arial;
 }
@@ -13,7 +11,7 @@ h1{
     padding: 0;
     margin-top: 0;
     font-family: "nyt-karnakcondensed";
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: .01em;
 }
 
@@ -46,13 +44,12 @@ body {
   background-color: hsl(
     var(--hue, 200),
     var(--saturation, 1%), 
-    var(--lightness,51%)
-    /* var(--lightness, 51%) */
-  );
+    calc(var(--lightness-offset, 0%) + var(--lightness,51%))
+  ); 
   color: white;
   fill: white;
   text-transform: uppercase;
-  border-radius: 0.25em;
+  border-radius: .25em;
   cursor: pointer;
   user-select: none;
 }
@@ -66,13 +63,12 @@ body {
   height: 1.75em;
 }
 
-.key:hover,
-.key:focus {
-    --lightness: 40%;
+.key:hover, .key:focus {
+  --lightness-offset: 10%;
 }
 
 .key.wrong {
-  --lightness: 23%;
+  --lightness: 20%;
 }
 
 .key.wrong-location{
@@ -95,7 +91,7 @@ body {
     grid-template-columns: repeat(5,4em);
     grid-template-rows: repeat(6,4em);
     gap: .25em;
-    margin-bottom: 1.01em;
+    margin-bottom: 1.35em;
 }
 
 .tile{
