@@ -12,7 +12,9 @@ h1{
     position: relative;
     padding: 0;
     margin-top: 0;
-    font-family:'Segoe UI', Tahoma, sans-serif;
+    font-family: "nyt-karnakcondensed";
+    font-weight: 700;
+    letter-spacing: .01em;
 }
 
 body {
