@@ -192,7 +192,7 @@ body {
 
 .alert-container{
   position: fixed;
-  top: 10vh;
+  top: 20vh;
   left: 50vw;
   transform: translateX(-50%);
   z-index: 1;

@@ -15468,7 +15468,7 @@ const targetWords = [
   
   function checkWinLose(guess, tiles) {
     if (guess === targetWord) {
-      showAlert("You win", 5000);
+      showAlert("You win", 3000);
       danceTiles(tiles);
       stopInterection();
       return;
