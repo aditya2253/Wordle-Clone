@@ -15398,9 +15398,7 @@ const targetWords = [
       tile.classList.add("flip");
     }, (index * FLIP_ANIMATION_DURATION) / 2);
   
-    tile.addEventListener(
-      "transitionend",
-      () => {
+    tile.addEventListener( "transitionend", () => {
         tile.classList.remove("flip");
         if (targetWord[index] == letter) {
           temp += letter;
@@ -15421,18 +15419,12 @@ const targetWords = [
         }
   
         if (index === array.length - 1) {
-          tile.addEventListener(
-            "transitionend",
-            () => {
+          tile.addEventListener( "transitionend", () => {
               startInterection();
               checkWinLose(guess, array);
-            },
-            { once: true }
-          );
+            }, { once: true });
         }
-      },
-      { once: true }
-    );
+      }, { once: true });
   }
   
   function getActiveTiles() {
@@ -15456,13 +15448,9 @@ const targetWords = [
   function shakeTiles(tiles) {
     tiles.forEach((tile) => {
       tile.classList.add("shake");
-      tile.addEventListener(
-        "animationend",
-        () => {
+      tile.addEventListener( "animationend", () => {
           tile.classList.remove("shake");
-        },
-        { once: true }
-      );
+        }, { once: true });
     });
   }
   
@@ -15476,7 +15464,7 @@ const targetWords = [
   
     const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
     if (remainingTiles.length === 0) {
-      showAlert(targetWord.toUpperCase(), null);
+      showAlert("Correct Word: " + targetWord.toUpperCase(), null);
       stopInterection();
     }
   }
@@ -15485,13 +15473,9 @@ const targetWords = [
     tiles.forEach((tile, index) => {
       setTimeout(() => {
         tile.classList.add("dance");
-        tile.addEventListener(
-          "animationend",
-          () => {
+        tile.addEventListener( "animationend", () => {
             tile.classList.remove("dance");
-          },
-          { once: true }
-        );
+          }, { once: true });
       }, (index * DANCE_ANIMATION_DURATION) / 5);
     });
   }
